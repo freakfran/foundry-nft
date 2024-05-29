@@ -2,9 +2,8 @@
 pragma solidity ^0.8.18;
 
 //import {ERC721} from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import {ERC721} from "../lib/openzeppelin-contracts/contracts/token/ERC721/ERC721.sol";
-
-// errors
+//JET BRAIN IDE cannot identify remapping,using absolute path
+import "lib/openzeppelin-contracts/contracts/token/ERC721/ERC721.sol";
 
 /**
  * @title
@@ -12,6 +11,7 @@ import {ERC721} from "../lib/openzeppelin-contracts/contracts/token/ERC721/ERC72
  * @notice
  */
 contract BasicNft is ERC721 {
+    // errors
     // Type declarations
 
     // State variables
@@ -35,7 +35,7 @@ contract BasicNft is ERC721 {
     // public
     function mintNft(string memory _tokenURI) public {
         s_tokenIdToUri[s_tokenCounter] = _tokenURI;
-        //s_tokenCounter是tokenId
+        //s_tokenCounter=>tokenId
         _safeMint(msg.sender, s_tokenCounter);
         s_tokenCounter++;
     }
